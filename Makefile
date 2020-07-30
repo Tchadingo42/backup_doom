@@ -89,7 +89,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(HEAD)
 
 $(COMPILE_SDL2):
 	if ! dpkg-query -W -f='$${Status}' freeglut3-dev  | grep "ok installed"; \
-	then sudo dnf install freeglut; fi
+	then sudo apt-get install freeglut3-dev; fi
 	(cd SDL2-2.0.12 \
 	&& ./configure --prefix=$(shell pwd)/SDL2 --enable-static --disable-shared \
 	&& make \
